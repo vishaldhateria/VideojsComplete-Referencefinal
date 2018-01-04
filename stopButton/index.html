@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>videojs-stop-button Demo</title>
+<link href="http://vjs.zencdn.net/6.4.0/video-js.css" rel="stylesheet">
+
+<!-- If you'd like to support IE8 -->
+<script src="http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+  <link href="/dist/videojs-stop-button.css" rel="stylesheet">
+</head>
+<body>
+  <video id="videojs-stop-button-player" class="video-js vjs-default-skin" controls>
+    <source src="//vjs.zencdn.net/v/oceans.mp4" type='video/mp4'>
+    <source src="//vjs.zencdn.net/v/oceans.webm" type='video/webm'>
+  </video>
+  <ul>
+    <li><a href="/test/">Run unit tests in browser.</a></li>
+    <li><a href="/docs/api/">Read generated docs.</a></li>
+  </ul>
+  <script src="http://vjs.zencdn.net/6.4.0/video.js"></script>
+  <script src="/dist/videojs-stop-button.js"></script>
+  <script>
+    (function(window, videojs) {
+      var player = window.player = videojs('videojs-stop-button-player');
+      player.stopButton();
+    }(window, window.videojs));
+  </script>
+</body>
+</html>

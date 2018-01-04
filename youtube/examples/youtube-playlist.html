@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="http://vjs.zencdn.net/6.4.0/video-js.css" rel="stylesheet">
+
+<!-- If you'd like to support IE8 -->
+<script src="http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script></head>
+<body>
+  <video
+    id="vid1"
+    class="video-js vjs-default-skin"
+    width="640" height="264"
+    controls
+    data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/watch?v=nyMkLwSyOVQ"}], "youtube": { "playlist": "2_HXUhShhmY,lLJf9qJHR3E" } }'
+  >
+  </video>
+
+  <script src="http://vjs.zencdn.net/6.4.0/video.js"></script>
+  <script src="../dist/Youtube.js"></script>
+</body>
+</html>

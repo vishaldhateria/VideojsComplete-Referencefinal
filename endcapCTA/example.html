@@ -1,0 +1,69 @@
+<head>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  <script src="http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+  <script src="videojs.endcapCTA.js"></script>
+
+  <script src="jquery.validate.min.js"></script>
+  <script src="jquery.form.js"></script>
+
+  <link rel="stylesheet" href="http://vjs.zencdn.net/6.4.0/video-js.css">
+  <link rel="stylesheet" href="videojs.endcapCTA.css">
+
+</head>
+
+<body>
+  <video id="video-id" class="video-js vjs-default-skin">
+    <source src="Plasti-Sin.mp4" type='video/mp4'>
+    
+    <p class="vjs-no-js">
+      <a href="https://www.youtube.com/watch?v=...." target="_blank">View this video on YouTube</a>
+    </p>
+  </video>
+  <script type="text/javascript">
+
+    var video = videojs('video-id', {
+      "width":680,
+      "height":495,
+      "autoplay": true,
+      "controls": true,
+      "preload": "auto"
+    });
+
+    video.endcapCTA({
+      html: '<section class="endcapCallToActionContent">....</section>',
+      run: function() {
+        // This runs upon creation of endcapCTA, just after video starts playing
+      }
+    });
+
+    function watchAgain() {
+      video.play();
+    }
+
+    function submitAndSpin() {
+      $('.sending').show();
+      //
+      // Do form submission stuff here
+      // Hide/show the success/failure/sending <li>s
+      //
+      return false;
+    }
+
+    // prep the form to do JS magic if available
+    window.setTimeout(function() {
+      $('#loveToHearForm').validate({
+        submitHandler: function(form) {
+          submitAndSpin();
+        },
+        messages: {
+          name: 'Please enter your name',
+          company: 'Please enter your company',
+          email: 'Please enter your email address so we can contact you',
+          message: 'Please enter a short message of what we can do to help'
+        }
+      });
+    }, 100);
+
+  </script>
+</body>

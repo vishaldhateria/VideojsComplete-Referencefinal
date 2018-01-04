@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="http://vjs.zencdn.net/6.4.0/video-js.css" rel="stylesheet">
+
+<!-- If you'd like to support IE8 -->
+<script src="http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+</head>
+<body>
+  <video
+    id="vid1"
+    class="video-js vjs-default-skin"
+    controls
+    width="640" height="264"
+    data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/watch?v=xjS6SftYQaQ"}] }'
+  >
+  </video>
+
+  <script src="http://vjs.zencdn.net/6.4.0/video.js"></script>
+  <script src="../dist/Youtube.js"></script>
+  <script>
+  // An example of playing with the Video.js javascript API
+  // You can look at the doc there: http://docs.videojs.com/docs/guides/api.html
+  videojs('vid1').ready(function() {
+    var myPlayer = this;
+    myPlayer.src({ type: 'video/youtube', src: 'https://www.youtube.com/watch?v=y6Sxv-sUYtM' });
+  });
+  </script>
+</body>
+</html>
